@@ -23,7 +23,7 @@
             <a>
                 <xsl:attribute name="href">
                     <xsl:text>#</xsl:text>
-                    <xsl:value-of select="@anchor" />
+                    <xsl:value-of select="@key" />
                 </xsl:attribute>
                 <xsl:number format="1 " level="multiple" />
                 <xsl:value-of select="@title" />
@@ -32,7 +32,7 @@
     </xsl:template>
 
     <xsl:template match="section">
-        <a><xsl:attribute name="name"><xsl:value-of select="@anchor" /></xsl:attribute></a>
+        <a><xsl:attribute name="name"><xsl:value-of select="@key" /></xsl:attribute></a>
 
         <xsl:variable name="titleSize"><xsl:value-of select="count(ancestor::section) + 2" /></xsl:variable>
         <xsl:element name="h{$titleSize}">
@@ -61,6 +61,21 @@
 
     <xsl:template match="code">
         <div class="code"><xsl:value-of select="."/></div>
+    </xsl:template>
+
+    <xsl:template match="ref">
+        <xsl:variable name="searchedKey" select="@key"/>
+        <xsl:variable name="foundTitle">
+            <xsl:value-of select="//section[@key=$searchedKey]/@title"/>
+        </xsl:variable>
+
+        <a>
+            <xsl:attribute name="href">
+                <xsl:text>#</xsl:text>
+                <xsl:value-of select="@key"/>
+            </xsl:attribute>
+            <xsl:value-of select="$foundTitle"/>
+        </a>
     </xsl:template>
 
 </xsl:stylesheet>
