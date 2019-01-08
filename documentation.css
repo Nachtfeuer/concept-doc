@@ -1,0 +1,15 @@
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.code {
+    margin-top: 0.25cm;
+    margin-bottom: 0.25cm;
+    padding-left: 0.5cm;
+    font-family: "Courier New";
+    white-space: pre;
+}

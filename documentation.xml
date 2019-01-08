@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="documentation.xsl"?>
+
+<documentation title="XML Based Documentation">
+    <section title="Key Features" anchor="key-features">
+    The following features are supported by the XML based documentation:
+        <itemization>
+            <item>Numbered section titles</item>
+            <item>Formatting like <bold>bold</bold>, <italic>italic</italic> and underlined</item>
+            <item>Itemization and enumeration</item>
+            <item>Referenzing a section by a unique key</item>
+            <item>Code blocks</item>
+            <item>Customizable stylesheets</item>
+        </itemization>
+    </section>
+
+    <section title="The Section" anchor="the-section">
+    A section is a XML tag with name <bold>section</bold> and the attribute <bold>title</bold>.
+    Each section may contain any number of further sections building up a hierarchy. A simple
+    section could look like the following one:
+        <code><![CDATA[<section title="A simple section">
+This is a very <bold>simple</bold> section
+</section>]]></code>
+
+    Each section will automatically get a number and each child section will increase the
+    title tag (h2, h3, h4, ...) automatically so that the font size (usually) decreases.
+    </section>
+
+    <section title="Formatting" anchor="formatting">
+        <section title="Bold" anchor="formatting-bold">
+            <bold>This is bold</bold>
+            <code><![CDATA[<bold>This is bold</bold>]]></code>
+        </section>
+
+        <section title="Italic" anchor="formatting-italic">
+            <italic>This is italic</italic>
+            <code><![CDATA[<italic>This is italic</italic>]]></code>
+        </section>
+    </section>
+</documentation>
