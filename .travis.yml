@@ -1,0 +1,12 @@
+matrix:
+  include:
+    - os: linux
+      language: java
+      jdk: openjdk10
+
+    - os: osx
+      language: java
+      jdk: openjdk10
+
+script:
+  - ./gradlew html

@@ -1,3 +1,5 @@
+tasks.register("assemble") { doLast {} }
+
 tasks.register("prepare") {
     group "concept-doc"
     description "Provides all tools for the build process"
