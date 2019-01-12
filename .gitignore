@@ -3,3 +3,7 @@ tools/
 build/
 saxon-he.zip
 documentation.html
+
+.vscode/settings.json
+.project
+.settings/
