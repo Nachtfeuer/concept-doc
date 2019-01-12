@@ -1,16 +1,5 @@
 tasks.register("assemble") { doLast {} }
 
-tasks.register("prepare") {
-    group "concept-doc"
-    description "Provides all tools for the build process"
-
-    doLast { 
-        exec {
-            commandLine 'scripts/run.sh', 'prepare'
-        }
-    }
-}
-
 tasks.register("html") {
     group "concept-doc"
     description "Generates documentation.html using documenation.xml and documentation.xsl"
@@ -21,5 +10,3 @@ tasks.register("html") {
         }
     }
 }
-
-html.dependsOn('prepare')
